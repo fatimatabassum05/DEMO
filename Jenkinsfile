@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
 	agent any
 		parameter {
 		choice(name: 'DEPLOY_TO', choices: ['DEV', 'QA', 'PROD'])
@@ -18,7 +18,7 @@ pipeline{
 
 		stage('Build') {
       			when {
-        			branch "master"
+        			branch "main"
       			}
 			steps {
 				sh 'echo "Building the code"'
@@ -32,3 +32,4 @@ pipeline{
 		}
 
 	}
+}
