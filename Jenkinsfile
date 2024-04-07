@@ -3,6 +3,9 @@ pipeline{
 	parameters {
 		choice(name: 'DEPLOY_TO', choices: ['DEV', 'QA', 'PROD'])
 	}
+	triggers {
+		githubPush()
+	}
 	stages {
 		stage('Checkout') {
 			steps {
